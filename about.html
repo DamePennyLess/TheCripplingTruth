@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | The Crippling Truth</title>
+    <style>
+        /* 🌟 General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        h1, h2, h3 {
+            color: #222;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* 🔗 Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #222;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar img {
+            width: 120px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        .navbar a {
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .navbar a:hover, .navbar a.active {
+            color: #ff6b81;
+        }
+
+        /* 🌟 Hero Banner */
+        .hero-banner {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 5px solid #ff6b81;
+        }
+        .hero-banner h1 {
+            font-size: 3rem;
+            color: #222;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .hero-banner p {
+            font-size: 1.3rem;
+            color: #444;
+            opacity: 0.9;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* 🎯 Mission Section */
+        .mission-section, .bio-section, .philosophy-section, .book-section, .final-quote {
+            padding: 60px 10%;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            border-radius: 12px;
+        }
+        .mission-section ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .mission-section li {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* 👑 Bio Section */
+        .bio-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+        .bio-container img {
+            flex: 1 1 300px;
+            max-width: 400px;
+        }
+        .bio-content {
+            flex: 2 1 500px;
+        }
+        blockquote {
+            border-left: 5px solid #ff6b81;
+            padding-left: 20px;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* 📝 Philosophy & Book Section */
+        .philosophy-section li, .book-section h3 {
+            font-size: 1.2rem;
+        }
+
+        /* 💬 Final Quote */
+        .final-quote blockquote {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 🔚 Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* 🎥 Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 📱 Responsive Design */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .bio-container {
+                flex-direction: column;
+            }
+            .hero-banner h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔗 Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="Logo.PNG" alt="The Crippling Truth Logo"></a>
+        </div>
+        <ul>
+            <li><a href="index.html">Home 🏠</a></li>
+            <li><a href="news.html">News 📰</a></li>
+            <li><a href="shop.html">Shop 🛒</a></li>
+            <li><a href="about.html" class="active">About 👑</a></li>
+            <li><a href="contact.html">Contact 📩</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🌟 Hero Banner -->
+    <header class="hero-banner">
+        <div class="hero-content">
+            <h1>👑 About The Crippling Truth</h1>
+            <p>Unfiltered. Unapologetic. Unstoppable. Meet the minds behind the satire.</p>
+        </div>
+    </header>
+
+    <!-- 🎯 Mission Section -->
+    <section class="mission-section">
+        <h2>🌟 Our Mission</h2>
+        <p><strong>The Crippling Truth</strong> aims to <em>expose the absurdities of how society treats disabled people—one satirical headline at a time.</em></p>
+        <p>We blend <strong>biting satire, unapologetic humor, and sharp political commentary</strong> to highlight daily realities, including government failings, inaccessible housing, and patronizing inspiration porn.</p>
+        <ul>
+            <li>✔️ Laughter as a weapon against injustice.</li>
+            <li>✔️ Humor breaking barriers & challenging misconceptions.</li>
+            <li>✔️ Satire to hold those in power accountable.</li>
+        </ul>
+        <p><strong>If you’re easily offended, you might want to leave. If you’re ready for raw honesty and dark humor—welcome. You’re one of us.</strong></p>
+    </section>
+
+    <!-- 👑 Dame Penny Less Bio Section -->
+    <section class="bio-section">
+        <div class="bio-container">
+            <img src="DamePennyLess.PNG" alt="Dame Penny Less">
+            <div class="bio-content">
+                <h2>👑 Meet Dame Penny Less – Editor-in-Chief</h2>
+                <blockquote>
+                    “They said being disabled was a full-time job. I just want the paycheck.”  
+                    <cite>— Dame Penny Less</cite>
+                </blockquote>
+                <p><strong>Dame Penny Less</strong> wasn’t always the <em>queen of crippling satire</em>. After becoming disabled and encountering the UK welfare system’s incompetence, she swapped <strong>caviar for care assessments</strong> and <strong>galas for government forms</strong>.</p>
+                <p>The <strong>Department of Witchcraft and Percussion (DWP)</strong> became her nemesis; society's ableist nonsense became her muse.</p>
+                <p>Her satirical commentary? Not just comedy—<strong>activism with a punchline.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📝 Penny's Philosophy -->
+    <section class="philosophy-section">
+        <h2>📝 Dame Penny Less’s Philosophy:</h2>
+        <ul>
+            <li>⚡ “Inspiration” is for Pinterest boards, not disabled people living their lives.</li>
+            <li>⚡ Government policies should come with a joke warning—except they’re deadly serious.</li>
+            <li>⚡ If we didn’t laugh at the system, we’d be screaming into the void.</li>
+        </ul>
+    </section>
+
+    <!-- 📚 Upcoming Book Section -->
+    <section class="book-section">
+        <h2>📚 Penny's Upcoming Book:</h2>
+        <h3>_From Posh to PIP: A Cripple’s Tale_</h3>
+        <p>A hilariously brutal memoir charting Penny’s fall from high society to high-stakes battles with benefit assessments. <strong>Coming soon—if she ever finishes arguing with the council.</strong></p>
+    </section>
+
+    <!-- 💬 Final Quote -->
+    <section class="final-quote">
+        <blockquote>
+            “Society loves a disabled person they can pity or put on a pedestal.  
+            But a disabled person who talks back? Terrifying.  
+            So here I am. Terrifying—and telling the truth.”  
+            <cite>— Dame Penny Less</cite>
+        </blockquote>
+    </section>
+
+<!-- Footer Section -->
+<footer class="crippling-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="/about" class="footer-link">About Us</a>
+        <a href="/editorial-policy" class="footer-link">Editorial Policy</a>
+        <a href="/contact" class="footer-link">Contact Us</a>
+        <a href="/store" class="footer-link">Store</a>
+        <a href="/sitemap" class="footer-link">Sitemap</a>
+        <a href="/subscribe" class="footer-link">Subscribe</a>
+      </div>
+      <div class="footer-trademark">
+        &copy; <span id="currentYear"></span> The Crippling Truth™ — *Satire So Sharp, It Cuts Through Red Tape.*
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Footer CSS -->
+  <style>
+    .crippling-footer {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      padding: 30px 10%;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      border-top: 3px solid #e63946;
+    }
+  
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 15px;
+    }
+  
+    .footer-link {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+  
+    .footer-link::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background-color: #e63946;
+      display: block;
+      margin: 5px auto 0;
+      transition: width 0.3s ease;
+    }
+  
+    .footer-link:hover {
+      color: #e63946;
+    }
+  
+    .footer-link:hover::after {
+      width: 100%;
+    }
+  
+    .footer-trademark {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  
+    @media (max-width: 768px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+  
+  <!-- JavaScript for Dynamic Year -->
+  <script>
+    // Dynamically update the year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  
+    // Add interactive hover sound effect
+    const links = document.querySelectorAll('.footer-link');
+    links.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
+        audio.play();
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Society, Love & Representation | The Crippling Truth</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #333;
+            color: #fff;
+        }
+        .navbar .logo img {
+            height: 50px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .society-banner {
+            background: url('assets/images/society-love-banner.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        .society-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+        .society-banner p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .roulette-section {
+            background-color: #f4f4f4;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .roulette-section button {
+            background-color: #ff6347;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .roulette-section button:hover {
+            background-color: #ff4500;
+        }
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+        }
+        .news-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .news-card-content {
+            padding: 1.5rem;
+        }
+        .news-card-content h3 {
+            margin-bottom: 1rem;
+        }
+        .news-card-content p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        .read-more-btn {
+            background-color: #333;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .read-more-btn:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="assets/images/logo.png" alt="The Crippling Truth Logo"></a>
+        </div>
+        <ul>
+            <li><a href="#home">Home 🏠</a></li>
+            <li><a href="#news">News 📰</a></li>
+            <li><a href="#shop">Shop 🛒</a></li>
+            <li><a href="#about">About 👑</a></li>
+            <li><a href="#contact">Contact 📩</a></li>
+        </ul>
+    </nav>
+
+    <!-- Society, Love & Representation Banner -->
+    <header class="society-banner" style="color: black;"></header>
+        <h1>❤️ Society, Love & Representation ❤️</h1>
+        <p>Smashing stereotypes, tackling taboo topics, and laughing at society’s obsession with "inspiration."</p>
+    </header>
+
+    <!-- Romance Roulette: Satire Edition -->
+    <section class="roulette-section">
+        <h2>💘 Romance Roulette: Satire Edition 💘</h2>
+        <p>Swipe through some classic lines—can you spot the genuine interest from the ableist nonsense?</p>
+        
+        <div class="button-container" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <button onclick="swipe('Ableist comment')">"You're so inspiring!" 🙄</button>
+            <button onclick="swipe('Fetishizing comment')">"I've always had a thing for people like you." 😬</button>
+            <button onclick="swipe('Genuine interest')">"Coffee this weekend?" ☕</button>
+        </div>
+        <h3 id="result" style="margin-top: 2rem; font-size: 1.5rem; color: #333;"></h3>
+    </section>
+
+    <script>
+        function swipe(comment) {
+            const result = document.getElementById("result");
+            let message;
+
+            if (comment === "Genuine interest") {
+                message = "💖 Genuine match! No weird comments. Coffee date pending... ☕✨";
+            } else if (comment === "Ableist comment") {
+                message = "🙄 'You're so inspiring'—Congratulations, you’ve unlocked the ‘inspiration porn’ trope!";
+            } else {
+                message = "😬 'I've always had a thing for people like you'—Fetish alert! 🚨";
+            }
+            result.textContent = message;
+        }
+    </script>
+
+    <!-- Latest Society, Love & Representation News -->
+    <section class="news-container">
+        <div class="news-card">
+            <img src="assets/images/media-representation.jpg" alt="Media Representation">
+            <div class="news-card-content">
+                <h3>Netflix's New Disabled Character: More Than a Trope?</h3>
+                <p>For once, a character who's not just there to 'inspire.' Progress or just better PR?</p>
+                <a href="article10.html" class="read-more-btn">Read More →</a>
+            </div>
+        </div>
+        <div class="news-card">
+            <img src="assets/images/romance-story.jpg" alt="Romantic Relationships">
+            <div class="news-card-content">
+                <h3>“Wait, You Can Date?!”—Society’s Shock Over Disabled Romance</h3>
+                <p>Because apparently, love has an accessibility checklist.</p>
+                <a href="article11.html" class="read-more-btn">Read More →</a>
+            </div>
+        </div>
+        <div class="news-card">
+            <img src="assets/images/representation-matters.jpg" alt="Representation Matters">
+            <div class="news-card-content">
+                <h3>Representation Matters—But Not Like *That*</h3>
+                <p>From 'inspirational' sob stories to actual lived experiences—how media can do better.</p>
+                <a href="article12.html" class="read-more-btn">Read More →</a>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer Section -->
+<footer class="crippling-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="/about" class="footer-link">About Us</a>
+        <a href="/editorial-policy" class="footer-link">Editorial Policy</a>
+        <a href="/contact" class="footer-link">Contact Us</a>
+        <a href="/store" class="footer-link">Store</a>
+        <a href="/sitemap" class="footer-link">Sitemap</a>
+        <a href="/subscribe" class="footer-link">Subscribe</a>
+      </div>
+      <div class="footer-trademark">
+        &copy; <span id="currentYear"></span> The Crippling Truth™ — *Satire So Sharp, It Cuts Through Red Tape.*
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Footer CSS -->
+  <style>
+    .crippling-footer {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      padding: 30px 10%;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      border-top: 3px solid #e63946;
+    }
+  
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 15px;
+    }
+  
+    .footer-link {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+  
+    .footer-link::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background-color: #e63946;
+      display: block;
+      margin: 5px auto 0;
+      transition: width 0.3s ease;
+    }
+  
+    .footer-link:hover {
+      color: #e63946;
+    }
+  
+    .footer-link:hover::after {
+      width: 100%;
+    }
+  
+    .footer-trademark {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  
+    @media (max-width: 768px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+  
+  <!-- JavaScript for Dynamic Year -->
+  <script>
+    // Dynamically update the year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  
+    // Add interactive hover sound effect
+    const links = document.querySelectorAll('.footer-link');
+    links.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
+        audio.play();
+      });
+    });
+  </script>
+
+</body>
+</html>

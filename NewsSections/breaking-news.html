@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking News | The Crippling Truth</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #333;
+            color: #fff;
+        }
+        .navbar .logo img {
+            height: 50px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .breaking-banner {
+            background: url('assets/images/breaking-news-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        .breaking-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+        .breaking-banner p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .headline-generator {
+            background-color: #f4f4f4;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .headline-generator button {
+            background-color: #ff6347;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .headline-generator button:hover {
+            background-color: #ff4500;
+        }
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 2rem;
+        }
+        .news-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .news-card:hover {
+            transform: scale(1.05);
+        }
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .news-card-content {
+            padding: 1.5rem;
+        }
+        .news-card-content h3 {
+            margin-bottom: 1rem;
+        }
+        .news-card-content p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        .read-more-btn {
+            background-color: #333;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        .read-more-btn:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        </div>
+        <ul>
+            <li><a href="index.html">Home 🏠</a></li>
+            <li><a href="news.html">News ⚡</a></li>
+            <li><a href="shop.html">Shop 🛒</a></li>
+            <li><a href="about.html">About 👑</a></li>
+            <li><a href="contact.html">Contact 📩</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breaking News Banner -->
+    <header class="breaking-banner">
+    <img src="logo.png" alt="The Crippling Truth Logo" style="width: 15%;">
+    <script>
+        document.querySelector('.breaking-banner img').addEventListener('click', () => {
+            alert('You clicked the logo!');
+        });
+    </script>
+    <h1 style="color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">⚡ Breaking News ⚡</h1>
+    <p style="color: black;">Latest satirical scoops exposing the absurdity of the system—served fresh.</p>
+</header>
+
+    <!-- Satirical Headline Generator -->
+    <section class="headline-generator">
+        <h2>Generate Your Own DWP Headline! 🎲</h2>
+        <p>Click the button below to discover the latest ridiculous reason for claim denial.</p>
+        <button onclick="generateHeadline()">📰 Generate Headline</button>
+        <h3 id="headline-result" style="margin-top: 2rem; font-size: 1.5rem; color: #333;"></h3>
+    </section>
+
+    <script>
+        const headlines = [
+            "DWP Denies Claim Because Applicant 'Looked Too Cheerful' in Assessment",
+            "Disabled Commuter Praised for 'Bravery' After Surviving Entire Tube Journey Without Assistance",
+            "Benefit Cut After Algorithm Mistakes Wheelchair for Luxury Recliner",
+            "Social Care Plan Rejected: 'Not Enough Proof of Being Miserable Enough'",
+            "Transport Accessibility Upgrades Announced—Set for Completion by 2090"
+        ];
+        function generateHeadline() {
+            const result = document.getElementById("headline-result");
+            const randomHeadline = headlines[Math.floor(Math.random() * headlines.length)];
+            result.textContent = `🗞️ ${randomHeadline}`;
+        }
+    </script>
+
+    <!-- Latest Breaking News Articles -->
+    <section class="news-container">
+        <div class="news-card">
+            <img src="../assets/images/magic-8-ball.jpg" alt="Magic 8-Ball Assessment">
+            <div class="news-card-content">
+                <h3>Accessible Housing Crisis</h3>
+                <p>The UK Government shocked the nation today by redefining "accessible housing" as "any building that has a front door."</p>
+                <a href="articles/accessible-housing.html" class="read-more-btn">Read More →</a>
+            </div>
+        </div>
+        <div class="news-card">
+            <img src="assests/images/magic-8-ball.jpg" alt="Magic 8-Ball Assessment">
+            <div class="news-card-content">
+                <h3>DWP’s Magic Trick</h3>
+                <p>The Department of Witchcraft and Percussion has introduced a groundbreaking new assessment tool: the **Magic 8-Ball**.</p>
+                <a href="articles/magic-8-ball.html" class="read-more-btn">Read More →</a>
+            </div>
+        </div>
+        <div class="news-card">
+            <img src="SpaceArticle.png" alt="Space Agency Diversifies">
+            <div class="news-card-content">
+                <h3>Space Agency Diversifies</h3>
+                <p>Paralympian to Lead Mission to Find Intelligent Life in Government.</p>
+                <a href="articles/Space-Agency-Diversifies.html" class="read-more-btn">Read More →</a>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer Section -->
+<footer class="crippling-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="/about" class="footer-link">About Us</a>
+        <a href="/editorial-policy" class="footer-link">Editorial Policy</a>
+        <a href="/contact" class="footer-link">Contact Us</a>
+        <a href="/store" class="footer-link">Store</a>
+        <a href="/sitemap" class="footer-link">Sitemap</a>
+        <a href="/subscribe" class="footer-link">Subscribe</a>
+      </div>
+      <div class="footer-trademark">
+        &copy; <span id="currentYear"></span> The Crippling Truth™ — *Satire So Sharp, It Cuts Through Red Tape.*
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Footer CSS -->
+  <style>
+    .crippling-footer {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      padding: 30px 10%;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      border-top: 3px solid #e63946;
+    }
+  
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 15px;
+    }
+  
+    .footer-link {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+  
+    .footer-link::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background-color: #e63946;
+      display: block;
+      margin: 5px auto 0;
+      transition: width 0.3s ease;
+    }
+  
+    .footer-link:hover {
+      color: #e63946;
+    }
+  
+    .footer-link:hover::after {
+      width: 100%;
+    }
+  
+    .footer-trademark {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  
+    @media (max-width: 768px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+  
+  <!-- JavaScript for Dynamic Year -->
+  <script>
+    // Dynamically update the year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  
+    // Add interactive hover sound effect
+    const links = document.querySelectorAll('.footer-link');
+    links.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
+        audio.play();
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+/* ♿ Satirical Accessibility Checker Section */
+.accessibility-checker-section {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+}
+
+.accessibility-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.accessibility-form label {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.accessibility-form input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+#checkAccessibilityBtn {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#checkAccessibilityBtn:hover {
+    background-color: #e74c3c;
+}
+
+.accessibility-result {
+    margin-top: 30px;
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: bold;
+    min-height: 50px;
+}
+/* 🌟 Hero Banner (Updated for About Page) */
+.hero-banner {
+    background: url('assets/images/about-banner.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero-banner.about-hero {
+    background: url('assets/images/about-banner.jpg') no-repeat center center/cover;
+}
+
+.hero-banner .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-banner .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* 🌟 Mission Section */
+.mission-section {
+    background-color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.mission-section h2 {
+    font-size: 2.5rem;
+    color: #ff5c5c;
+}
+
+.mission-section p,
+.mission-points li {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* 👑 Bio Section */
+.bio-section {
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+}
+
+.bio-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.bio-container img {
+    width: 300px;
+    border-radius: 50%;
+    border: 5px solid #ff5c5c;
+}
+
+.bio-content h2 {
+    font-size: 2rem;
+    color: #0056b3;
+}
+
+.bio-content blockquote {
+    font-style: italic;
+    color: #ff5c5c;
+    font-size: 1.3rem;
+}
+
+/* 📝 Philosophy Section */
+.philosophy-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.philosophy-section ul {
+    list-style: none;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.philosophy-section li {
+    margin-bottom: 15px;
+}
+
+/* 📚 Book Section */
+.book-section {
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.book-section h3 {
+    font-style: italic;
+    color: #ff5c5c;
+    margin-top: 10px;
+}
+
+/* 💬 Final Quote */
+.final-quote {
+    background-color: #333;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.final-quote blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.final-quote cite {
+    display: block;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #ff5c5c;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    .bio-container {
+        flex-direction: column;
+    }
+
+    .bio-container img {
+        width: 250px;
+    }
+
+    .hero-banner .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}

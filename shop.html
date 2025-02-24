@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | The Crippling Truth</title>
+    <style>
+        /* 🌟 General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        h1, h3 {
+            color: #222;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* 🔗 Navbar */
+        nav {
+            background-color: #222;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+        }
+        nav a {
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff6b81;
+        }
+
+        /* 🌟 Header Section */
+        header {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 5px solid #ff6b81;
+        }
+        header h1 {
+            font-size: 3rem;
+        }
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        .cart-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff6b81;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cart-link:hover {
+            background-color: #ff4757;
+        }
+
+        /* 🛒 Shop Section */
+        .shop-section {
+            padding: 60px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .product {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+        }
+        .product h3 {
+            margin: 15px 0;
+        }
+        .product p {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .add-to-cart {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff6b81;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .add-to-cart:hover {
+            background-color: #ff4757;
+        }
+
+        /* 🔚 Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        /* 📱 Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <script defer>
+        // 🛒 Simple Cart Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const cartCount = document.getElementById('cart-count');
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            let cartItems = 0;
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    cartItems++;
+                    cartCount.textContent = cartItems;
+                    alert('🛒 Added to cart! Total items: ' + cartItems);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <!-- 🌐 Header Section -->
+    <header>
+        <div class="container">
+            <h1>Official Crippling Truth Merch</h1>
+            <p>Support satire and fight ableist nonsense in style.</p>
+            <a href="cart.html" class="cart-link">🛒 View Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </header>
+
+    <!-- 🔗 Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home 🏠</a></li>
+                <li><a href="news.html">News 📰</a></li>
+                <li><a href="about.html">About 👑</a></li>
+                <li><a href="contact.html">Contact 📩</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 🛍️ Shop Section -->
+    <section class="shop-section">
+        <div class="product" data-id="1" data-name="I Survived a PIP Assessment T-Shirt" data-price="19.99">
+            <img src="assests/images/Survived-PIP.png" alt="T-Shirt">
+            <h3>"I Survived a PIP Assessment" T-Shirt</h3>
+            <p>£19.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="2" data-name="Access Denied Coffee Mug" data-price="12.99">
+            <img src="assests/images/Access-Denied.png" alt="Mug">
+            <h3>"Access Denied" Coffee Mug</h3>
+            <p>£12.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="3" data-name="Dame Penny Less’s Memoir: From Posh to PIP" data-price="14.99">
+            <img src="assests/images/Post-To-PIP.png" alt="Book">
+            <h3>Dame Penny Less’s Memoir: <em>From Posh to PIP</em></h3>
+            <p>£14.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- 🔚 Footer -->
+<!-- Footer Section -->
+<footer class="crippling-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="/about" class="footer-link">About Us</a>
+        <a href="/editorial-policy" class="footer-link">Editorial Policy</a>
+        <a href="/contact" class="footer-link">Contact Us</a>
+        <a href="/store" class="footer-link">Store</a>
+        <a href="/sitemap" class="footer-link">Sitemap</a>
+        <a href="/subscribe" class="footer-link">Subscribe</a>
+      </div>
+      <div class="footer-trademark">
+        &copy; <span id="currentYear"></span> The Crippling Truth™ — *Satire So Sharp, It Cuts Through Red Tape.*
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Footer CSS -->
+  <style>
+    .crippling-footer {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      padding: 30px 10%;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      border-top: 3px solid #e63946;
+    }
+  
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 15px;
+    }
+  
+    .footer-link {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+  
+    .footer-link::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background-color: #e63946;
+      display: block;
+      margin: 5px auto 0;
+      transition: width 0.3s ease;
+    }
+  
+    .footer-link:hover {
+      color: #e63946;
+    }
+  
+    .footer-link:hover::after {
+      width: 100%;
+    }
+  
+    .footer-trademark {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  
+    @media (max-width: 768px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+  
+  <!-- JavaScript for Dynamic Year -->
+  <script>
+    // Dynamically update the year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  
+    // Add interactive hover sound effect
+    const links = document.querySelectorAll('.footer-link');
+    links.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
+        audio.play();
+      });
+    });
+  </script>
+
+</body>
+</html>

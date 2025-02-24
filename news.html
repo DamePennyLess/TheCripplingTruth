@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Hub | The Crippling Truth</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --font-family: 'Arial', sans-serif; }
+        body { font-family: var(--font-family); background-color: #f9f9f9; color: #333; line-height: 1.7; transition: background-color 0.5s, color 0.5s; }
+        a { text-decoration: none; color: inherit; }
+        h1, h2 { color: #222; margin-bottom: 20px; }
+        p { margin-bottom: 15px; }
+
+        /* 🔗 Navbar */
+        nav { background-color: #222; padding: 20px; position: sticky; top: 0; z-index: 10; }
+        nav ul { display: flex; justify-content: center; gap: 30px; list-style: none; }
+        nav a { color: white; font-size: 1rem; transition: color 0.3s; }
+        nav a:hover { color: #ff6b81; }
+
+        /* 🌟 Hero Section */
+        .hero-news { background: linear-gradient(to right, #ff9a9e, #fad0c4); text-align: center; padding: 80px 20px; border-bottom: 5px solid #ff6b81; }
+        .hero-news h1 { font-size: 3rem; }
+        .hero-news p { font-size: 1.3rem; opacity: 0.9; }
+
+        /* 📰 Latest News Section */
+        .latest-news { padding: 40px 10%; background-color: #fff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 12px; }
+        .latest-news article { border-bottom: 1px solid #ddd; padding: 20px 0; }
+        .latest-news article:last-child { border-bottom: none; }
+        .latest-news time { display: block; font-size: 0.9rem; color: #888; }
+
+        /* 🔥 Carousel */
+        .carousel { display: flex; overflow: hidden; position: relative; margin: 40px 10%; border-radius: 12px; }
+        .carousel-item { min-width: 100%; transition: transform 0.5s ease-in-out; }
+        .carousel-item:first-child { transform: translateX(0); }
+        .carousel img { width: 100%; border-radius: 12px; }
+
+        /* 🌙 Dark Mode */
+        .dark-mode { background-color: #1e1e1e; color: #ccc; }
+        .dark-mode .latest-news, .dark-mode nav, .dark-mode footer { background-color: #333; color: white; }
+        .toggle-dark { position: fixed; top: 20px; right: 20px; background-color: #ff6b81; padding: 10px; border-radius: 50%; cursor: pointer; }
+
+        /* 🔝 Scroll-to-Top */
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; padding: 12px 18px; background-color: #ff6b81; color: white; border-radius: 50%; display: none; cursor: pointer; font-size: 1.5rem; }
+
+        /* 🧩 Animations */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+    <style>
+        @media (max-width: 768px) { 
+            .hero-news h1 { font-size: 2rem; } 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🌙 Dark Mode Toggle -->
+    <div class="toggle-dark" id="toggleDark">🌙</div>
+
+    <!-- 🔗 Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home 🏠</a></li>
+            <li><a href="news.html">News 📰</a></li>
+            <li><a href="shop.html">Shop 🛒</a></li>
+            <li><a href="about.html">About 👑</a></li>
+            <li><a href="contact.html">Contact 📩</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🌟 Hero Section -->
+    <header class="hero-news">
+        <img src="Logo.PNG" alt="The Crippling Truth Logo" style="width: 150px; margin-bottom: 20px;">
+        <h1>📰 The Crippling Truth News Hub</h1>
+        <p>Satire, sarcasm, and the not-so-funny truth about disability, welfare, and society.</p>
+    </header>
+
+<!-- 📰 News Section with Horizontal Scroll Banner -->
+<section id="news" class="section-banner">
+    <h2 style="text-align: center;">📰 Latest Satirical News</h2>
+    <div id="news-banner">
+        <div id="news-container">
+            <div class="news-item">
+                <img src="articles/housing.jpg" alt="Accessible Housing Crisis">
+                <div class="news-content">
+                    <h4>Accessible Housing Crisis</h4>
+                    <p>The UK Government shocked the nation by redefining "accessible housing" as "any building that has a front door."</p>
+                    <a href="articles/accessible-housing.html" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <img src="assests/images/magic-8-ball.jpg" alt="Magic 8-Ball Assessment">
+                <div class="news-content">
+                    <h4>Magic 8-Ball Assessment</h4>
+                    <p>The Department of Witchcraft and Percussion (DWP) unveils its latest assessment tool: the <strong>Magic 8-Ball</strong>.</p>
+                    <a href="articles/magic-8-ball.html" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <img src="DWP-Magic-Trick.png" alt="DWP Magic Trick">
+                <div class="news-content">
+                    <h4>DWP Magic Trick</h4>
+                    <p>Is it a miracle or mischief? The DWP's latest 'trick' might shock you.</p>
+                    <a href="articles/DWP-Magic-Trick.html" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <img src="SpaceArticle.png" alt="Space Agency Diversifies">
+                <div class="news-content">
+                    <h4>Space Agency Diversifies</h4>
+                    <p>Paralympian John McFall to lead ESA’s mission to find intelligent life—starting with UK government departments.</p>
+                    <a href="articles/Space-Agency-Diversifies.html" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <img src="Hollywood.png" alt="Hollywood's Latest Trend">
+                <div class="news-content">
+                    <h4>Hollywood’s Latest Trend</h4>
+                    <p>Able-bodied actors compete for 'Best Disabled Performance' awards. Because, of course, they do.</p>
+                    <a href="articles/Hollywood-Latest-Trend.html" target="_blank" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- 📰 News Banner Styles -->
+<style>
+    /* 📰 News Horizontal Scroll Banner */
+    #news-banner {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        background-color: #222;
+        color: #fff;
+        padding: 20px 0;
+    }
+
+    #news-container {
+        display: flex;
+        position: relative;
+        animation: slideHorizontal 25s linear infinite;
+    }
+
+    .news-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 300px;
+        margin: 0 20px;
+        background-color: #333;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.5s;
+    }
+
+    .news-item:hover {
+        transform: translateY(-10px) scale(1.05);
+    }
+
+    .news-item img {
+        width: 150px;
+        height: 100px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    .news-content h4 {
+        color: #ff9800;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    .read-more {
+        background-color: #ff9800;
+        padding: 6px 12px;
+        color: white;
+        border-radius: 4px;
+        margin-top: 10px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .read-more:hover {
+        background-color: #e68900;
+    }
+
+    #news-banner:hover #news-container {
+        animation-play-state: paused;
+    }
+
+    @keyframes slideHorizontal {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    @media (max-width: 768px) {
+        #news-container {
+            flex-direction: column;
+            animation: none;
+        }
+
+        .news-item {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+</style>
+
+    <!-- 🌟 Category Banner Section -->
+    <style>
+        .category-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+    
+        .category-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+    
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+    
+        .category-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+    
+        .category-item p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.2rem;
+        }
+    
+        .category-btn {
+            display: inline-block;
+            background-color: #e63946;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+    
+        .category-btn:hover {
+            background-color: #c72b39;
+        }
+    </style>
+    
+    <div class="category-container">
+        <div class="category-item" data-name="Breaking News & Politics">
+            <h3>🚨 Breaking News & Politics</h3>
+            <p>Latest headlines—because ableism doesn’t take a day off.</p>
+            <a href="NewsSections/breaking-news.html" class="category-btn">Explore →</a>
+        </div>
+    
+        <div class="category-item" data-name="Health, Care & Welfare">
+            <h3>💸 Health, Care & Welfare</h3>
+            <p>Satire and updates on health, social care, and welfare policies.</p>
+            <a href="NewsSections/welfare.html" class="category-btn">Explore →</a>
+        </div>
+    
+        <div class="category-item" data-name="Accessibility & Living">
+            <h3>🩺 Accessibility & Living</h3>
+            <p>Absurdities in transport, housing, and accessibility.</p>
+            <a href="NewsSections/Accessibility-Living.html" class="category-btn">Explore →</a>
+        </div>
+    
+        <div class="category-item" data-name="Society, Love & Representation">
+            <h3>🚌 Society, Love & Representation</h3>
+            <p>Relationships, sexuality, media narratives & challenging harmful tropes.</p>
+            <a href="NewsSections/Society-Love-Representation.html" class="category-btn">Explore →</a>
+        </div>
+    
+        <div class="category-item" data-name="Global Disability Rights">
+            <h3>🏛 Global Disability Rights</h3>
+            <p>How other nations handle (or mishandle) disability rights.</p>
+            <a href="NewsSections/GlobalNews.html" class="category-btn">Explore →</a>
+        </div>
+    </div>
+
+<!-- 🚀 JavaScript for Interactive Features -->
+<script>
+    // 🎨 Interactive Highlight on Hover
+    document.querySelectorAll('.category-item').forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.style.backgroundColor = '#ffeff0';
+            item.style.transition = 'background-color 0.3s ease';
+        });
+        item.addEventListener('mouseleave', () => {
+            item.style.backgroundColor = 'white';
+        });
+    });
+
+    // 🖱 Smooth Scroll to Section on Click
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            const href = btn.getAttribute('href');
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    // Select all category items
+    const categories = document.querySelectorAll(".category-item");
+
+    categories.forEach((category) => {
+        category.addEventListener("click", function () {
+            // Find the link inside the clicked category
+            const link = category.querySelector(".category-btn").getAttribute("href");
+
+            // Redirect to the corresponding page
+            if (link) {
+                window.location.href = link;
+            }
+        });
+    });
+});
+</script>
+
+    <!-- 🔝 Scroll-to-Top Button -->
+    <div class="scroll-top" id="scrollTopBtn">↑</div>
+
+    <!-- 🔚 Footer -->
+<!-- Footer Section -->
+<footer class="crippling-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="/about" class="footer-link">About Us</a>
+        <a href="/editorial-policy" class="footer-link">Editorial Policy</a>
+        <a href="/contact" class="footer-link">Contact Us</a>
+        <a href="/store" class="footer-link">Store</a>
+        <a href="/sitemap" class="footer-link">Sitemap</a>
+        <a href="/subscribe" class="footer-link">Subscribe</a>
+      </div>
+      <div class="footer-trademark">
+        &copy; <span id="currentYear">2023</span> The Crippling Truth™ — *Satire So Sharp, It Cuts Through Red Tape.*
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Footer CSS -->
+  <style>
+    .crippling-footer {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      padding: 30px 10%;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      border-top: 3px solid #e63946;
+    }
+  
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 15px;
+    }
+  
+    .footer-link {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+  
+    .footer-link::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background-color: #e63946;
+      display: block;
+      margin: 5px auto 0;
+      transition: width 0.3s ease;
+    }
+  
+    .footer-link:hover {
+      color: #e63946;
+    }
+  
+    .footer-link:hover::after {
+      width: 100%;
+    }
+  
+    .footer-trademark {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  
+    @media (max-width: 768px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+  
+  <!-- JavaScript for Dynamic Year -->
+  <script>
+    // Dynamically update the year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  
+    // Add interactive hover sound effect
+    const links = document.querySelectorAll('.footer-link');
+    const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
+    audio.preload = 'auto';
+    links.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        audio.currentTime = 0;
+        audio.play();
+      });
+    });
+  </script>
+
+    <!-- 🚀 JavaScript for Interactivity -->
+    <script>
+        // 🌙 Dark Mode Toggle
+        // 🌙 Dark Mode Toggle with Persistence
+        const toggleDark = document.getElementById('toggleDark');
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+
+        toggleDark.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            let theme = 'light';
+            if (document.body.classList.contains('dark-mode')) {
+                theme = 'dark';
+            }
+            localStorage.setItem('theme', theme);
+        });
+
+        // 🔝 Scroll-to-Top Button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.onscroll = () => scrollTopBtn.style.display = window.pageYOffset > 300 ? 'block' : 'none';
+        scrollTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // 🎠 Carousel Auto-Slide
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        let currentSlide = 0;
+        setInterval(() => {
+            carouselItems[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % carouselItems.length;
+            carouselItems[currentSlide].classList.add('active');
+        }, 4000);
+            const articles = Array.from(document.querySelectorAll('.latest-news article'));
+            articles.sort((a, b) => {
+        // 🆕 Latest News Sorting (Dynamic Date Sort)
+        document.addEventListener('DOMContentLoaded', () => {
+            articles.sort((a, b) => {
+                const timeA = a.querySelector('time');
+                const timeB = b.querySelector('time');
+                if (timeA && timeB) {
+                    return new Date(timeB.getAttribute('datetime')) - new Date(timeA.getAttribute('datetime'));
+                }
+                return 0;
+            });
+            articles.sort((a, b) => new Date(b.querySelector('time').getAttribute('datetime')) - new Date(a.querySelector('time').getAttribute('datetime')));
+            const container = document.querySelector('.latest-news');
+            articles.forEach(article => container.appendChild(article));
+        });
+    });
+    </script>
+
+</body>
+</html>

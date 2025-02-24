@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Crippling Truth</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background-color: #f9f9f9; color: #333; line-height: 1.7; transition: background-color 0.5s, color 0.5s; }
+        a { text-decoration: none; color: inherit; }
+        h1, h2 { color: #222; margin-bottom: 20px; }
+        p { margin-bottom: 15px; }
+
+        /* 🔗 Navbar */
+        nav { background-color: #222; padding: 20px; position: sticky; top: 0; z-index: 10; }
+        nav ul { display: flex; justify-content: center; gap: 30px; list-style: none; }
+        nav a { color: white; font-size: 1rem; transition: color 0.3s; }
+        nav a:hover { color: #ff6b81; }
+
+        /* 🌟 Hero Section */
+        .hero-banner {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom: 5px solid #ff6b81;
+            color: #222;
+        }
+        .hero-banner .logo img {
+            height: 160px;
+            width: auto;
+            animation: pulse 3s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .hero-banner h1 { font-size: 3rem; font-weight: bold; }
+        .hero-banner p { font-size: 1.5rem; opacity: 0.9; }
+        .hero-button {
+            background-color: #ff6b81;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .hero-button:hover { background-color: #ff4757; }
+
+        /* 📰 News Horizontal Scroll Banner */
+        #news-banner {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+        }
+        #news-container {
+            display: flex;
+            position: relative;
+            animation: slideHorizontal 25s linear infinite;
+        }
+        .news-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 300px;
+            margin: 0 20px;
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s;
+        }
+        .news-item:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+        .news-item img {
+            width: 150px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .news-content h4 { color: #ff9800; margin-bottom: 10px; }
+        .read-more {
+            background-color: #ff9800;
+            padding: 6px 12px;
+            color: white;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .read-more:hover { background-color: #e68900; }
+        #news-banner:hover #news-container { animation-play-state: paused; }
+        @keyframes slideHorizontal {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* 🔝 Scroll-to-Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 12px 18px;
+            background-color: #ff6b81;
+            color: white;
+            border-radius: 50%;
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔗 Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html#home">Home 🏠</a></li>
+            <li><a href="index.html#news">News 📰</a></li>
+            <li><a href="shop.html">Shop 🛒</a></li>
+            <li><a href="about.html">About 👑</a></li>
+            <li><a href="contact.html">Contact 📩</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🌟 Hero Section -->
+    <header id="home" class="hero-banner">
+        <div class="logo">
+            <a href="#home"><img src="Logo.PNG" alt="The Crippling Truth Logo"></a>
+        </div>
+        <h1>Welcome to <span>The Crippling Truth</span></h1>
+        <p>Satire. Disability. Politics. The truth hurts—but we make it funny.</p>
+    </header>
+
+    <!-- 📰 News Section with Horizontal Scroll Banner -->
+    <section id="news" class="section-banner">
+        <h2 style="text-align: center;">📰 Latest Satirical News</h2>
+        <div id="news-banner">
+            <div id="news-container">
+                <div class="news-item">
+                    <img src="articles/housing.jpg" alt="Housing Crisis">
+                    <div class="news-content">
+                        <h4>Accessible Housing Crisis</h4>
+                        <p>The UK Government shocked the nation today by redefining "accessible housing" as "any building that has a front door,".</p>
+                        <a href="articles/accessible-housing.html" target="_blank" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="assests/images/magic-8-ball.jpg" alt="magic-8-ball">
+                    <div class="news-content">
+                        <h4>magic-8-ball</h4>
+                        <p>The Department of Witchcraft and Percussion (DWP) has announced a groundbreaking new assessment tool: the **Magic 8-Ball**</p>
+                        <a href="articles/magic-8-ball.html" target="_blank" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="DWP-Magic-Trick.png" alt="DWP-Magic-Trick">
+                    <div class="news-content">
+                        <h4>DWP Magic Trick </h4>
+                        <p>The Department of Witchcraft and Percussion (DWP) has announced a groundbreaking new assessment tool: the **Magic 8-Ball**</p>
+                        <a href="articles/DWP’s-Magic-Trick.html" target="_blank" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="SpaceArticle.png" alt="Space Agency Diversifies">
+                    <div class="news-content">
+                        <h4>Space Agency Diversifies </h4>
+                        <p> Paralympian to Lead Mission to Find Intelligent Life in Government.</p>
+                        <a href="articles/Space-Agency-Diversifies.html"_blank" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="Hollywood.png" alt="Hollywood Latest Trends">
+                    <div class="news-content">
+                        <h4>Hollywood’s Latest Trend</h4>
+                        <p>Able-Bodied Actors Compete for ‘Best Disabled Performance’ Awards.</p>
+                        <a href="articles/Hollywood-Latest-Trend.html" target="_blank" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="news.html" class="read-more-btn" style="display: inline-block; padding: 10px 20px; background-color: #ff6b81; color: white; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">Read More News →</a>
+        </div></div>
+    </section>
+
+    <!-- 🛍️ Shop, About, Contact Section (Horizontally) -->
+    <section class="horizontal-scroll-section" style="margin-top: 50px;"></section>
+        <h2 style="text-align: center;">🛍️ Explore More</h2>
+        <div class="horizontal-container" style="display: flex; justify-content: center; gap: 30px; overflow-x: auto; padding: 20px 0;">
+            <div class="horizontal-item" style="flex: 0 0 auto; text-align: center;">
+                <img src="Store.png" alt="Shop" style="width: 300px; height: 300px; border-radius: 10px; object-fit: cover;">
+                <div class="horizontal-content" style="margin-top: 10px;">
+                    <h4>Official Merchandise</h4>
+                    <p>Support satire in style.</p>
+                    <a href="shop.html" class="read-more" style="display: inline-block; padding: 6px 12px; background-color: #ff9800; color: white; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">Visit Shop →</a>
+                </div>
+            </div>
+            <div class="horizontal-item" style="flex: 0 0 auto; text-align: center;">
+                <img src="DamePennyLess.PNG" alt="About" style="width: 300px; height: 300px; border-radius: 10px; object-fit: cover;">
+                <div class="horizontal-content" style="margin-top: 10px;">
+                    <h4>About Dame Penny Less</h4>
+                    <p>Meet the legend behind the satire.</p>
+                    <a href="about.html" class="read-more" style="display: inline-block; padding: 6px 12px; background-color: #ff9800; color: white; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">Learn More →</a>
+                </div>
+            </div>
+            <div class="horizontal-item" style="flex: 0 0 auto; text-align: center;">
+                <img src="Contact us.png" alt="Contact" style="width: 300px; height: 300px; border-radius: 10px; object-fit: cover;">
+                <div class="horizontal-content" style="margin-top: 10px;">
+                    <h4>Contact Us</h4>
+                    <p>Got a scoop? Let us know!</p>
+                    <a href="contact.html" class="read-more" style="display: inline-block; padding: 6px 12px; background-color: #ff9800; color: white; border-radius: 4px; text-decoration: none; transition: background-color 0.3s;">Get in Touch →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎡 Wheel Section -->
+    <section class="wheel-banner" style="background: linear-gradient(to right, #ff9a9e, #fad0c4); text-align: center; padding: 50px 20px; border-bottom: 5px solid #ff6b81; color: #222;">
+        <h1>🎡 The Wheel of Misfortune 🎡</h1>
+        <p>Spin the wheel to find out the *totally legitimate* reason the DWP might reject your claim!</p>
+
+        <div class="wheel-container" style="display: inline-block; position: relative;">
+            <canvas id="wheelCanvas" width="400" height="400"></canvas>
+            <button id="spinButton" style="display: block; margin: 20px auto; background-color: #ff6b81; color: #fff; padding: 1rem 2rem; border-radius: 5px; transition: background-color 0.3s;">🎯 Spin the Wheel!</button>
+        </div>
+        <h3 id="wheelResult"></h3>
+
+        <!-- 🔊 Custom Spin Sound -->
+        <audio id="spinSound" src="spin-sound.mp3" preload="auto"></audio>
+    </section>
+
+    <!-- 🚀 JavaScript for the Wheel -->
+    <script>
+        // 🎡 Wheel Functionality
+        const wheelCanvas = document.getElementById('wheelCanvas');
+        const ctx = wheelCanvas.getContext('2d');
+        const spinButton = document.getElementById('spinButton');
+        const wheelResult = document.getElementById('wheelResult');
+        const spinSound = document.getElementById('spinSound');
+
+        const satiricalOutcomes = [
+            "❌ Rejected: You smiled in your assessment. Clearly, you're fine!",
+            "❌ Rejected: You can hold a pen. Congrats, you're employable!",
+            "❌ Rejected: You attended the appointment. Not ill enough.",
+            "❌ Rejected: Our assessor Googled it. You're 'cured' now!",
+            "❌ Rejected: You watched TV. 9–5 job incoming!",
+            "❌ Rejected: Your form? Blue ink. Needed black. Tough luck.",
+            "❌ Rejected: ‘Gut feeling’—no science needed.",
+            "❌ Rejected: Walked 20 metres. Must be marathon-ready!",
+            "❌ Rejected: Your pet looks happy. You must be too.",
+            "❌ Rejected: Said 'hello' to the assessor. Too social!",
+            "❌ Rejected: Full moon. Claims denied today. Sorry.",
+            "❌ Rejected: Once liked a holiday pic. Too healthy, clearly.",
+            "❌ Rejected: The Department of Witchcraft and Percussion says 'nah'."
+        ];
+
+        function drawWheel() {
+            const numSegments = satiricalOutcomes.length;
+            const anglePerSegment = (2 * Math.PI) / numSegments;
+            let angle = 0;
+            satiricalOutcomes.forEach((result, i) => {
+                ctx.beginPath();
+                ctx.moveTo(200, 200);
+                ctx.arc(200, 200, 200, angle, angle + anglePerSegment);
+                ctx.fillStyle = `hsl(${i * (360 / numSegments)}, 80%, 60%)`;
+                ctx.fill();
+                ctx.fillStyle = "#fff";
+                ctx.font = "14px Arial";
+                ctx.textAlign = "center";
+                ctx.fillText(result.slice(0, 20) + "...", 200 + Math.cos(angle + anglePerSegment / 2) * 120, 200 + Math.sin(angle + anglePerSegment / 2) * 120);
+                angle += anglePerSegment;
+            });
+        }
+        drawWheel();
+
+        // 🎯 Spin Animation + Sound
+        spinButton.addEventListener('click', () => {
+            spinSound.currentTime = 0;
+            spinSound.play();
+
+            const spinAngle = Math.random() * 360 + 720; // Dramatic multi-rotation
+            wheelCanvas.style.transition = 'transform 5s cubic-bezier(0.33, 1, 0.68, 1)';
+            wheelCanvas.style.transform = `rotate(${spinAngle}deg)`;
+
+            setTimeout(() => {
+                const finalAngle = spinAngle % 360;
+                const finalIndex = Math.floor((360 - finalAngle) / (360 / satiricalOutcomes.length)) % satiricalOutcomes.length;
+                wheelResult.innerText = `💥 ${satiricalOutcomes[finalIndex]}`;
+                wheelCanvas.style.transition = '';
+                wheelCanvas.style.transform = `rotate(${finalAngle}deg)`;
+            }, 5000);
+        });
+    </script>
+
+ <!-- Footer Section -->
+<footer class="crippling-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="about.html" class="footer-link">About Us</a>
+        <a href="editorial-policy.html" class="footer-link">Editorial Policy</a>
+        <a href="contact.html" class="footer-link">Contact Us</a>
+        <a href="shop.html" class="footer-link">Store</a>
+        <a href="/sitemap" class="footer-link">Sitemap</a>
+        <a href="/subscribe" class="footer-link">Subscribe</a>
+      </div>
+      <div class="footer-trademark">
+        &copy; <span id="currentYear"></span> The Crippling Truth™ — *Satire So Sharp, It Cuts Through Red Tape.*
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Footer CSS -->
+  <style>
+    .crippling-footer {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+      padding: 30px 10%;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      border-top: 3px solid #e63946;
+    }
+  
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 15px;
+    }
+  
+    .footer-link {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+  
+    .footer-link::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background-color: #e63946;
+      display: block;
+      margin: 5px auto 0;
+      transition: width 0.3s ease;
+    }
+  
+    .footer-link:hover {
+      color: #e63946;
+    }
+  
+    .footer-link:hover::after {
+      width: 100%;
+    }
+  
+    .footer-trademark {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  
+    @media (max-width: 768px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+  
+  <!-- JavaScript for Dynamic Year -->
+  <script>
+    // Dynamically update the year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  
+    // Add interactive hover sound effect
+    const links = document.querySelectorAll('.footer-link');
+    links.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        const audio = new Audio('https://www.soundjay.com/buttons/sounds/button-09.mp3');
+        audio.play();
+      });
+    });
+  </script>
+
+</body>
+</html>

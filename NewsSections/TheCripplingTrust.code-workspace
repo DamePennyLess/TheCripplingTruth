@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "TheCripplingTrust",
+			"path": "../TheCripplingTrust"
+		},
+		{
+			"name": "articles",
+			"path": "../articles"
+		},
+		{
+			"name": "assests",
+			"path": "../assests"
+		},
+		{
+			"name": "NewsSections",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
